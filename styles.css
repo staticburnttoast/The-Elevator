@@ -1,3 +1,17 @@
+h1 {
+  color: whitesmoke;
+}
+p {
+  font-size: 1.1em;
+}
+a {
+  color: #bb86fc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 body {
   font-family: 'Courier New', Courier, monospace;
   background-color: #121212;
@@ -57,17 +71,4 @@ body {
   color: #bb86fc;
   margin: 0 15px;
   text-decoration: none;
-}
-h1 {
-  color: whitesmoke;
-}
-p {
-  font-size: 1.1em;
-}
-a {
-  color: #bb86fc;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
 }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="/resources/bwah.jpg">
+  <title>The Elevator</title>
+  <h1>Welcome to the inside of <i>The Elevator</i></h1>
+  <script>
+    let currentFloor = "Main Lobby";
+    let lobbyButtonSpam = 0;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      currentFloor = localStorage.getItem('currentFloor') || 'Main Lobby';
+      document.querySelector('.container h1').textContent = currentFloor;
+    });
+
+    function selectFloor(floor) {
+      const floorNames = {
+        "floor3": "3rd Floor",
+        "floor2": "2nd Floor",
+        "lobby": "Main Lobby",
+        'basement': '???'
+      };
+
+      currentFloor = floorNames[floor];
+      document.querySelector('.container h1').textContent = currentFloor;
+      document.querySelectorAll('.button').forEach(btn => btn.classList.remove('selected'));
+      document.getElementById(floor).classList.add('selected');
+
+      if (floor === 'lobby') {
+        lobbyButtonSpam++;
+        if (lobbyButtonSpam >= 10) {
+          unlockBasement();
+        }
+      }
+
+      const button = document.getElementById(floor);
+      button.classList.add('selected');
+      setTimeout(() => button.classList.remove('selected'), 500);
+    }
+
+    function leaveElevator() {
+      const exitElevator = {
+        "Main Lobby": "lobby",
+        "2nd Floor": "floor2",
+        "3rd Floor": "floor3",
+        "???": "basement"
+      }
+
+      window.location.href = exitElevator[currentFloor] + ".html";
+    }
+
+    function unlockBasement() {
+      let panel = document.querySelector('.elevator-panel');
+      if (!document.getElementById('basement')) {
+        let basementButton = document.createElement('button');
+        basementButton.id = 'basement';
+        basementButton.classList.add('button');
+        basementButton.textContent = '?';
+        basementButton.onclick = () => selectFloor('basement');
+        panel.appendChild(basementButton);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>You are currently located at:</h2>
+  <div class="container">
+    <h1>Main Lobby</h1>
+  </div>
+  <div class="elevator-panel">
+    <button id="floor3" class="button" onclick="selectFloor('floor3')">3</button>
+    <button id="floor2" class="button" onclick="selectFloor('floor2')">2</button>
+    <button id="lobby" class="button" onclick="selectFloor('lobby')">L</button>
+  </div>
+  <div class="container">
+    <a href="#" onclick="leaveElevator()"><h2>Leave</h2></a>
+  </div>
+  <div class="footer">
+    <a href="mailto:ar81@stmarys-ca.edu">Email</a>
+    <a href="https://github.com/staticburnttoast">GitHub</a>
+  </div>
+</body>
+</html>
