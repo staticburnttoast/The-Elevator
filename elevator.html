@@ -18,6 +18,7 @@
 
     function selectFloor(floor) {
       const floorNames = {
+        "floor4": "4th Floor",
         "floor3": "3rd Floor",
         "floor2": "2nd Floor",
         "lobby": "Main Lobby",
@@ -46,6 +47,7 @@
         "Main Lobby": "lobby",
         "2nd Floor": "floor2",
         "3rd Floor": "floor3",
+        "4th Floor": "floor4",
         "???": "basement"
       }
 
@@ -72,6 +74,7 @@
   </div>
   <div class="elevator-container">
     <div class="elevator-panel">
+      <button id="floor4" class="button" onclick="selectFloor('floor4')">4</button>
       <button id="floor3" class="button" onclick="selectFloor('floor3')">3</button>
       <button id="floor2" class="button" onclick="selectFloor('floor2')">2</button>
       <button id="lobby" class="button" onclick="selectFloor('lobby')">L</button>
