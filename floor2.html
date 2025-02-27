@@ -11,15 +11,47 @@
     function setCurrentFloor() {
       localStorage.setItem('currentFloor', '2nd Floor');
     }
+
+    function showImageDescription(imageID) {
+      let speechBubble = document.getElementById('speech-bubble');
+
+      if (!speechBubble) {
+        speechBubble = document.createElement('div');
+        speechBubble.id = 'speech-bubble';
+        speechBubble.classList.add('speech-bubble');
+        document.body.appendChild(speechBubble);
+      }
+
+      const descriptions = {
+        "selfImage": "This is me, the creator of this website. I'm a computer science student at Saint Mary's College of California. I'm also a game developer and a web developer. I'm currently working on a game and praciticing my drawing skills. Yes, this image is from 2022 and I don't plan on updating it anytime soon.",
+        "elevatorGirl": "The elevator girl you see inside The Elevator. She is my original character from a game that I'm working on. But that's a secret I can't reveal yet because it's still in development.",
+        "caffiene": "Yes, this is a bag filled with 5 Monster energy drinks. I also have a 4-pack box of RedBull in my room. Either way, I buy a new drink almost every day. Is it a problem? No, it's a solution. I'm a programmer, what do you expect?"
+      }
+
+      speechBubble.textContent = descriptions[imageID];
+      speechBubble.style.display = 'block';
+
+      setTimeout(() => {
+        speechBubble.remove();
+      }, 10000);
+    }
   </script>
 </head>
 <body>
-  <h2>Please, click on anything here that interests you.</h2>
-  <div class="container">
-    <!-- Image Goes Here -->
+  <h2>Please click on anything here that interests you.</h2>
+  <div class="gallery">
+    <div class="gallery-item" onclick="showImageDescription('selfImage')">
+      <img src="resources/gallery/me.jpg">
+    </div>
+    <div class="gallery-item" onclick="showImageDescription('elevatorGirl')">
+      <img src="resources/elevator-girl/elevator_girl_neutral.png">
+    </div>
+    <div class="gallery-item">
+      <img src="resources/gallery/caffiene.jpg" onclick="showImageDescription('caffiene')">
+    </div>
   </div>
   <div class="container">
-    <a href="elevator.html" onclick="setCurrentFloor()"><h2>Return</h2></a>
+    <a href="elevator.html" onclick="setCurrentFloor()"><h2>Return to <i>The Elevator</i></h2></a>
   </div>
   <div class="footer">
     <a href="mailto:ar81@stmarys-ca.edu">Email</a>
