@@ -70,10 +70,13 @@
   <div class="container">
     <h1>Main Lobby</h1>
   </div>
-  <div class="elevator-panel">
-    <button id="floor3" class="button" onclick="selectFloor('floor3')">3</button>
-    <button id="floor2" class="button" onclick="selectFloor('floor2')">2</button>
-    <button id="lobby" class="button" onclick="selectFloor('lobby')">L</button>
+  <div class="elevator-container">
+    <div class="elevator-panel">
+      <button id="floor3" class="button" onclick="selectFloor('floor3')">3</button>
+      <button id="floor2" class="button" onclick="selectFloor('floor2')">2</button>
+      <button id="lobby" class="button" onclick="selectFloor('lobby')">L</button>
+    </div>
+    <img src="/resources/placeholder.png" alt="Elevator Girl" class="elevator-girl">
   </div>
   <div class="container">
     <a href="#" onclick="leaveElevator()"><h2>Leave</h2></a>
