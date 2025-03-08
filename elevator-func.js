@@ -83,11 +83,11 @@ let currentFloor = "Main Lobby";
     elevatorGirlClicks = 0;
     isAnnoyed = false;
 
-    girlImg.src = '/resources/elevator-girl/elevator_girl_yap.png';
+    girlImg.src = 'https://USERNAME.github.io/REPO/resources/elevator-girl/elevator_girl_yap.png';
     speechBubble.textContent = 'You have arrived at the ' + currentFloor + '.';
 
     setTimeout(() => {
-      girlImg.src = '/resources/elevator-girl/elevator_girl_neutral.png';
+      girlImg.src = 'https://USERNAME.github.io/REPO/resources/elevator-girl/elevator_girl_neutral.png';
       speechBubble.remove();
     }, 2000);
   }
@@ -116,13 +116,13 @@ let currentFloor = "Main Lobby";
 
     let dialogue = floorInfo[currentFloor];
 
-    girlImg.src = '/resources/elevator-girl/elevator_girl_yap.png';
+    girlImg.src = 'https://USERNAME.github.io/REPO/resources/elevator-girl/elevator_girl_yap.png';
     speechBubble.textContent = dialogue;
 
     if (elevatorGirlClicks >= 10) {
       isAnnoyed = true;
-      girlImg.src = '/resources/elevator-girl/elevator_girl_frown.png';
-      speechBubble.textContent = "Please don't touch me so much.";
+      girlImg.src = 'https://USERNAME.github.io/REPO/resources/elevator-girl/elevator_girl_frown.png';
+      speechBubble.textContent = "Please don't touch me like that.";
       
       setTimeout(() => {
         isAnnoyed = false;
@@ -131,7 +131,7 @@ let currentFloor = "Main Lobby";
   }
 
     setTimeout(() => {
-      girlImg.src = '/resources/elevator-girl/elevator_girl_neutral.png';
+      girlImg.src = 'https://USERNAME.github.io/REPO/resources/elevator-girl/elevator_girl_neutral.png';
       speechBubble.remove();
     }, 10000);
   }
@@ -149,14 +149,14 @@ let currentFloor = "Main Lobby";
         document.querySelector('.elevator-container').appendChild(speechBubble);
       }
 
-      girlImg.src = '/resources/elevator-girl/elevator_girl_frown.png';
+      girlImg.src = 'https://USERNAME.github.io/REPO/resources/elevator-girl/elevator_girl_frown.png';
       speechBubble.textContent = "Please stop messing with the elevator buttons.";
 
       setTimeout(() => {
         isAnnoyed = false;
         elevatorButtonSpam = 0;
         speechBubble.remove();
-        girlImg.src = '/resources/elevator-girl/elevator_girl_neutral.png';
+        girlImg.src = 'https://USERNAME.github.io/REPO/resources/elevator-girl/elevator_girl_neutral.png';
       }, 3000);
     }
   }
