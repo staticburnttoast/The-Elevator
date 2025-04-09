@@ -5,3 +5,5 @@ Otherwise, all other artwork used is not mine and is properly credited.
 By the way, the intended method to experience this is to start in the Lobby. It has rules, so please read them.
 
 Also I'll be taking this code and reworking/refining it on my private account so if you somehow find that know that no one stole my code or assets, it's just me.
+
+ok as of 4.8.25 i have no fucking clue why images are breaking even for a moment but its pissing me off and i really dont care anymore to fix it lmao
